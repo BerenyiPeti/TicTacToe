@@ -111,20 +111,20 @@ function gyoztes() {
     var atl1 = "";
     var atl2 = "";
     for (let index = 0; index < 9; index++) {
-        var milyenMezo = "";
+        /*var milyenMezo = "";
         if (ID(`${index}`).alt == "") {
             milyenMezo = ",";
         } else {
             milyenMezo = ID(`${index}`).alt;
-        }
+        }*/
 
         if (index < 3) {
-            sor1 += milyenMezo;
+            sor1 += xVagyO(index);
 
         } else if (index < 6) {
-            sor2 += milyenMezo;
+            sor2 += xVagyO(index);
         } else {
-            sor3 += milyenMezo;
+            sor3 += xVagyO(index);
         }
         
     }
@@ -155,14 +155,27 @@ function gyoztes() {
         i++;
     }
 
+    for (let index = 0; index < 9; index+= 4) {
+        atl1 += xVagyO(index);
+        
+    }
+
+    for (let index = 2; index < 8; index+= 2) {
+        atl2 += xVagyO(index);
+        
+    }
+
+
     console.log("sor1:"+sor1)
     console.log("sor2:"+sor2)
     console.log("sor3:"+sor3)
     console.log("oszlop1:"+oszl1)
     console.log("oszlop2:"+oszl2)
     console.log("oszlop3:"+oszl3)
+    console.log("atl1:"+atl1)
+    console.log("atl2:"+atl2)
 
-    osszesMezo += sor1 + sor2 + sor3 + oszl1 + oszl2 + oszl3;
+    osszesMezo += sor1 +"|" + sor2 +"|" + sor3 +"|" + oszl1 +"|" + oszl2 +"|" + oszl3 +"|";
     console.log("osszesMezo: "+osszesMezo);
     /*var i = 0;
     while (i < osszesMezo.length && !("xxx" in osszesMezo)) {
