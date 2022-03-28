@@ -45,7 +45,10 @@ function tabla(){
 
     kor = 1;
     index = 0;
-    ID("gomb").addEventListener("click", tabla);
+    //ID("gomb1").addEventListener("click", tabla);
+    ID("gomb1").addEventListener("click", tabla);
+    ID("gomb2").addEventListener("click", tabla);
+    ID("gomb2").addEventListener("click", overlayKi);
 
     //console.log(valasztottMezo);
 
@@ -60,14 +63,7 @@ function valasztottMezo() {
     //console.log(mezoIndex);
 
     megjelenit();
-    nyertes();
-}
-
-
-function nyertes() {
-    if (kor === 10) {
-        console.log("játék vége")
-    }
+    //nyertes();
 }
 
 
@@ -175,7 +171,7 @@ function gyoztes() {
     console.log("atl1:"+atl1)
     console.log("atl2:"+atl2)
 
-    osszesMezo += sor1 +"|" + sor2 +"|" + sor3 +"|" + oszl1 +"|" + oszl2 +"|" + oszl3 +"|";
+    osszesMezo += sor1 +"|" + sor2 +"|" + sor3 +"|" + oszl1 +"|" + oszl2 +"|" + oszl3 +"|" +atl1 + "|" + atl2;
     console.log("osszesMezo: "+osszesMezo);
     /*var i = 0;
     while (i < osszesMezo.length && !("xxx" in osszesMezo)) {
@@ -188,13 +184,45 @@ function gyoztes() {
     //console.log(vaneNyertesX);
     //console.log(vaneNyertesO);
 
+    var vanGyoztes = false;
+    var jatekVege = false;
+
     if (vaneNyertesX > -1) {
-        console.log("X nyert!")
+        //console.log("X nyert!")
+        vanGyoztes = true;
+        jatekVege = true;
+        ID("nyertes").innerHTML = "X nyert!";
+
     } else if (vaneNyertesO > -1) {
-        console.log("O nyert!")
+        //console.log("O nyert!")
+        vanGyoztes = true;
+        jatekVege = true;
+        ID("nyertes").innerHTML = "O nyert!";
     }
 
+    if (kor === 9 && !vanGyoztes) {
+        console.log("Döntetlen!")
+        jatekVege = true;
+        ID("nyertes").innerHTML = "Döntetlen!";
+    }
+
+    if (jatekVege) {
+        overlayBe();
+    }
+
+
+
+    //console.log(kor);
+
 }
+
+function overlayBe() {
+    document.getElementById("kiNyert").style.display = "flex";
+  }
+  
+function overlayKi() {
+    document.getElementById("kiNyert").style.display = "none";
+  }
 
 
 

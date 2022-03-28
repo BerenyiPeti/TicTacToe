@@ -1,10 +1,14 @@
+body {
+    background-color: rgb(214, 146, 68);
+}
+
 #fotarolo {
     max-width: 900px;
     margin: auto;
-    border: 5px solid black;
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    padding: 5px;
+    background-color: white;
+
 }
 
 .mezo{
@@ -23,15 +27,52 @@ img {
     width: 100%;
 }
 
-#gomb {
+#gomb1 {
     width: 150px;
     height: 50px;
     border: 1px solid black;
     text-align: center;
     margin: auto;
     margin-top: 10px;
+    background-color: white;
 }
 
+#kiNyert {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#gomb2 {
+    width: 500px;
+    height: 150px;
+    text-align: center;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(184, 181, 181);
+
+}
+
+#gomb2 p {
+    margin: auto;
+    padding-top: 45px;
+    font-size: 50px;
+}
+
+#nyertes {
+    font-size: 100px;
+    color: white;
+    font-weight: bold;
+}
 
 
 
